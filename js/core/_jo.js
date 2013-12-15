@@ -129,7 +129,7 @@ if (typeof console.log !== 'function')
 // just a place to hang our hat
 jo = {
 	platform: "webkit",
-	version: "0.5.0",
+	version: "0.5.0k",
 	
 	useragent: [
 		'ipad',
@@ -218,8 +218,7 @@ jo = {
 
 		var s = (typeof joScroller !== "undefined") ? joScroller.prototype : null;
 		var d = joDOM;
-
-		if (s && this.matchPlatform("tizen msie chrome safari bb10 firefox")) {
+		if (s && this.matchPlatform("tizen msie chrome safari bb10 firefox iphone ipad")) {
 			// native scrolling
 			joDOM.addCSSClass(document.body, "nativescroll");
 			s.onDown = function() {};

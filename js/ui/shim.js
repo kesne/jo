@@ -45,6 +45,7 @@ joShim.extend(joContainer, {
 	},
 	
 	hide: function() {
+		joDOM.removeCSSClass(document.body, "blur");
 		joDefer(function() {
 			joEvent.on(this.container, joEvent.map.transitionend, this.onHide, this);
 			this.container.className = '';
@@ -55,7 +56,7 @@ joShim.extend(joContainer, {
 	
 	show: function() {
 		this.attach();
-
+    joDOM.addCSSClass(document.body, "blur");
 		joEvent.remove(this.container, joEvent.map.transitionend, this.onHide, this);
 		joDefer(function() {
 			this.container.className = 'show';
